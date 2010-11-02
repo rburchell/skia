@@ -100,12 +100,12 @@ protected:
 
     // overrides
     virtual void onInflate(const SkDOM& dom, const SkDOM::Node*);
-    
+
+    typedef SkView INHERITED;
+
 private:
     SkString    fLabel;
     SkEvent     fEvent;
-    
-    typedef SkView INHERITED;
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
