@@ -3,6 +3,7 @@
 
 #include "SkPaint.h"
 #include "SkRefCnt.h"
+class SkCanvas;
 
 class SkTextStyle : public SkRefCnt {
 public:
