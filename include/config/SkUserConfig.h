@@ -42,6 +42,24 @@
     commented out, so including it will have no effect.
 */
 
+#ifndef SK_A32_SHIFT
+    // Qt hack: match Qt's byte ordering.
+    //      | Little | Big
+    // Qt   | BGRA   | ARGB
+    // Skia | RGBA   | RGBA
+    #ifdef SK_CPU_BENDIAN
+        #define SK_R32_SHIFT    16
+        #define SK_G32_SHIFT    8
+        #define SK_B32_SHIFT    0
+        #define SK_A32_SHIFT    24
+    #else
+        #define SK_R32_SHIFT    16
+        #define SK_G32_SHIFT    8
+        #define SK_B32_SHIFT    0
+        #define SK_A32_SHIFT    24
+    #endif
+#endif
+
 ///////////////////////////////////////////////////////////////////////////////
 
 /*  Scalars (the fractional value type in skia) can be implemented either as
